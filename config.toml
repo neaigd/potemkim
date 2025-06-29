@@ -1,0 +1,10 @@
+baseURL = "https://example.org/"
+languageCode = "pt-br" # Changed to Portuguese as per user's language
+title = "Meu Arquivo de Chats do Gemini"
+# No theme specified for now, we'll rely on custom layouts in the layouts/ directory.
+# This keeps it simple and flexible for now.
+
+[params]
+  description = "Um site para exibir conversas arquivadas do Gemini."
+  # Example of a custom param we might use in layouts:
+  # author = "Seu Nome Aqui"

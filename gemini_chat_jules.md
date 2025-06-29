@@ -1,0 +1,1 @@
+[Sign in](https://accounts.google.com/ServiceLogin?passive=1209600&continue=https://gemini.google.com/share/1145c5b62104&followup=https://gemini.google.com/share/1145c5b62104&ec=GAZAkgU)

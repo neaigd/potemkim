@@ -1,0 +1,55 @@
+name: Deploy Gemini Chats to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Or your default branch
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest' # or a specific version
+          # extended: true # Uncomment if you use SASS/SCSS
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x' # Specify Python version
+
+      - name: Install Python dependencies
+        run: |
+          pip install requests beautifulsoup4 html2text
+          # Add any other dependencies your chosen script needs
+
+      - name: Run Gemini Chat Scraper
+        run: |
+          # This is a placeholder command.
+          # You will need to choose which script to run and how.
+          # For example, if you have a list of URLs in a file:
+          # while read url; do
+          #   python get_gemini_md.py "$url" -o "content/chats/$(basename $url).md"
+          # done < urls.txt
+          # Or for a single URL for testing:
+          python3 get_gemini_jules.py "https://gemini.google.com/share/1145c5b62104" -o "content/chats/gemini_conversa_1.md"
+          # Ensure the output directory content/chats/ exists or is created by your script.
+
+      - name: Build Hugo site
+        run: hugo --minify
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          # cname: your.custom.domain.com # Uncomment if you have a custom domain
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'Deploy Gemini chats to GitHub Pages'
