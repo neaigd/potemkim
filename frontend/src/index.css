@@ -4,55 +4,17 @@
 
 body {
   overflow-x: hidden;
+  @apply bg-light-background text-light-text-primary;
+}
+
+.dark body {
+  @apply bg-dark-background text-dark-text-primary;
 }
 
 #root {
   max-width: 768px; /* Equivalente a max-w-3xl */
   margin: 0 auto; /* Centraliza o conteúdo */
   padding: 2rem; /* Mantém o padding original */
-}
-
-.bg-blue-100 {
-  background-color: #dbeafe; /* Tailwind's blue-100 */
-}
-.text-blue-900 {
-  color: #1e3a8a; /* Tailwind's blue-900 */
-}
-.bg-purple-100 {
-  background-color: #f3e8ff; /* Tailwind's purple-100 */
-}
-.text-purple-900 {
-  color: #581c87; /* Tailwind's purple-900 */
-}
-.p-4 {
-  padding: 1rem; /* 16px */
-}
-.mb-6 {
-  margin-bottom: 1.5rem; /* 24px */
-}
-.rounded-xl {
-  border-radius: 0.75rem; /* 12px */
-}
-.shadow-md {
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-}
-.ml-auto {
-  margin-left: auto;
-}
-.mr-0 {
-  margin-right: 0;
-}
-.text-right {
-  text-align: right;
-}
-.mr-auto {
-  margin-right: auto;
-}
-.ml-0 {
-  margin-left: 0;
-}
-.text-left {
-  text-align: left;
 }
 
 .prose pre,

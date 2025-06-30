@@ -4,7 +4,7 @@ import DialogueTurn from './DialogueTurn';
 function ChatSection({ chatTurns, md }) {
   return (
     <>
-      <h2 className="text-4xl font-bold text-gray-800 mb-8">Diálogo Completo</h2>
+      <h2 className="text-4xl font-bold text-light-text-primary mb-8">Diálogo Completo</h2>
       <div className="flex flex-col">
         {chatTurns.map((turn, index) => (
           <DialogueTurn key={index} turn={turn} md={md} />

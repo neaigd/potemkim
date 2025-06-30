@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import markdownit from 'markdown-it';
 import chatMarkdown from './chat.md?raw';
 import Header from './components/Header';
@@ -61,8 +61,28 @@ function parseChatMarkdown(markdownText) {
 const chatTurns = parseChatMarkdown(chatMarkdown);
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(prevMode => !prevMode);
+  };
+
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10 px-8">
+    <div className="min-h-screen bg-light-background flex flex-col items-center py-10 px-8">
+      <button
+        onClick={toggleDarkMode}
+        className="fixed top-4 right-4 p-2 rounded-full bg-light-accent-blue text-white dark:bg-dark-accent-blue shadow-lg z-50"
+      >
+        {isDarkMode ? '☀️' : '🌙'}
+      </button>
       <Header />
       <ResourcesSection videoInfo={videoInfo} articleInfo={articleInfo} />
       <ChatSection chatTurns={chatTurns} md={md} />

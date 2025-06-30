@@ -12,7 +12,7 @@ const DialogueTurn = ({ turn, md }) => {
 
   return (
     <div
-      className={`mb-6 p-4 rounded-xl shadow-md ${turn.speaker === 'Eu' ? 'bg-blue-100 text-blue-900 ml-auto mr-0 text-right' : 'bg-purple-100 text-purple-900 mr-auto ml-0 text-left'}`}>
+      className={`mb-6 p-4 rounded-xl shadow-md ${turn.speaker === 'Eu' ? 'bg-light-accent-blue/10 text-light-text-primary dark:bg-dark-accent-blue/20 dark:text-dark-text-primary ml-auto mr-0 text-right' : 'bg-light-accent-purple/10 text-light-text-primary dark:bg-dark-accent-purple/20 dark:text-dark-text-primary mr-auto ml-0 text-left'}`} >
       <p className="font-bold text-lg mb-1">{turn.speaker}:</p>
       <div className="prose prose-base max-w-none overflow-wrap-break-word word-break-break-word">
         <div

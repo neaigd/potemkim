@@ -2,8 +2,8 @@ import React from 'react';
 
 function ResourcesSection({ videoInfo, articleInfo }) {
   return (
-    <div className="bg-blue-50 border-l-4 border-blue-500 text-blue-800 p-6 rounded-lg shadow-md mb-10">
-      <h2 className="text-3xl font-bold mb-4 border-b-2 border-blue-400 pb-2">Recursos Principais</h2>
+    <div className="bg-light-card-background border-l-4 border-light-accent-blue text-light-text-primary p-6 rounded-lg shadow-md mb-10">
+      <h2 className="text-3xl font-bold mb-4 border-b-2 border-light-accent-blue pb-2">Recursos Principais</h2>
       
       <h3 className="text-2xl font-semibold mb-3">Vídeo: A Incoerência das IAs</h3>
       <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
@@ -26,7 +26,7 @@ function ResourcesSection({ videoInfo, articleInfo }) {
           href={articleInfo.link} 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-blue-600 hover:text-blue-800 font-medium transition duration-300 ease-in-out"
+          className="text-light-accent-blue hover:text-dark-accent-blue font-medium transition duration-300 ease-in-out"
         >
           Acessar Artigo (se disponível)
         </a>
