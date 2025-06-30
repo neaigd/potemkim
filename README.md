@@ -10,6 +10,7 @@ Este repositório contém o código-fonte de um site estático construído com *
 
 *   `.github/workflows/main.yml`: Configuração do GitHub Actions para automação do deploy no GitHub Pages.
 *   `config.toml`: Arquivo de configuração geral do projeto (uso específico pode variar).
+
 *   `favicon.ico`: Ícone da aba do navegador para o site.
 *   `README.md`: Este arquivo, contendo a descrição do projeto.
 *   `frontend/`: Diretório principal que contém toda a aplicação web React.
@@ -41,3 +42,16 @@ Esta é a parte central do projeto, desenvolvida em React.
 
 ---
 <!-- trigger action -->
+
+## Próximos Passos e Prioridades
+
+Para garantir um desenvolvimento eficiente e organizado, as issues abertas no repositório serão abordadas na seguinte ordem lógica:
+
+1.  **Organizar sessões da página (Issue #3)**
+    *   **Justificativa:** Esta é a tarefa mais fundamental. Antes de refinar a aparência visual ou adicionar funcionalidades complexas, é essencial ter uma estrutura clara e bem definida para o conteúdo da página. Isso garante que o trabalho de design e desenvolvimento subsequente seja aplicado a uma base sólida e organizada, evitando retrabalho.
+
+2.  **Melhorar esquema de cores e adicionar tema escuro (Issue #2)**
+    *   **Justificativa:** Uma vez que as sessões da página estejam organizadas, faz sentido focar na melhoria do esquema de cores e na implementação do tema escuro. Essas são melhorias visuais que se beneficiam de uma estrutura de página já estabelecida, permitindo uma aplicação mais coesa e eficaz do design.
+
+3.  **Implementa Página Interativa 'O Legado de Potemkin' com React, Tailwind e Animações (Issue #1)**
+    *   **Justificativa:** Esta issue é o objetivo principal do projeto e é bastante abrangente. As issues #2 e #3 são, na verdade, sub-tarefas que contribuem para a conclusão desta issue maior. Ela deve permanecer aberta como o rastreador principal do progresso geral do projeto, mas o trabalho direto deve se concentrar nas tarefas mais granulares (como as issues #2 e #3) que a compõem.
