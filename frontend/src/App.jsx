@@ -113,15 +113,7 @@ function App() {
 
       <div className="w-full max-w-3xl">
         {displayedTurns.map((turn, index) => (
-          <div
-            key={index}
-            className={`mb-6 p-4 rounded-xl shadow-md
-              ${turn.speaker === 'Eu' ? 'bg-blue-100 text-blue-900 ml-auto mr-0 text-right' : 'bg-purple-100 text-purple-900 mr-auto ml-0 text-left'}
-            `}
-          >
-            <p className="font-bold text-lg mb-1">{turn.speaker}:</p>
-            <div dangerouslySetInnerHTML={{ __html: md.render(turn.text) }} />
-          </div>
+          <DialogueTurn key={index} turn={{...turn, text: md.render(turn.text)}} />
         ))}
       </div>
     </div>
