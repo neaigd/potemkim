@@ -31,6 +31,14 @@ jobs:
       run: npm run build
       working-directory: ./frontend
 
+    - name: Inspect build output
+      run: |
+        echo "--- Listing contents of dist directory ---"
+        ls -R ./dist
+        echo "--- Contents of dist/index.html ---"
+        cat ./dist/index.html
+      working-directory: ./frontend
+
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
