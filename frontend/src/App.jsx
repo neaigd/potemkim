@@ -120,7 +120,7 @@ function App() {
             `}
           >
             <p className="font-bold text-lg mb-1">{turn.speaker}:</p>
-            <div dangerouslySetInnerHTML={{ __html: md.render(turn.text) }} />
+            <div>{turn.text}</div>
           </div>
         ))}
       </div>
