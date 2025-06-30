@@ -99,9 +99,7 @@ function App() {
       <h2 className="text-4xl font-bold text-gray-800 mb-8">Diálogo Completo</h2>
 
       <div className="w-full max-w-3xl">
-        {chatTurns.map((turn, index) => (
-          <DialogueTurn key={index} turn={{...turn, text: md.render(turn.text)}} />
-        ))}
+        <pre>{JSON.stringify(chatTurns, null, 2)}</pre>
       </div>
     </div>
   );
