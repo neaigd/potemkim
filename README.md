@@ -47,11 +47,16 @@ Esta é a parte central do projeto, desenvolvida em React.
 
 Para garantir um desenvolvimento eficiente e organizado, as issues abertas no repositório serão abordadas na seguinte ordem lógica:
 
-1.  **Organizar sessões da página (Issue #3)**
-    *   **Justificativa:** Esta é a tarefa mais fundamental. Antes de refinar a aparência visual ou adicionar funcionalidades complexas, é essencial ter uma estrutura clara e bem definida para o conteúdo da página. Isso garante que o trabalho de design e desenvolvimento subsequente seja aplicado a uma base sólida e organizada, evitando retrabalho.
+1.  **Implementa Página Interativa 'O Legado de Potemkin' com React, Tailwind e Animações (Issue #1)**
+    *   **Justificativa:** Esta issue é o objetivo principal do projeto e é bastante abrangente. As tarefas abaixo são desdobramentos que contribuem para a conclusão desta issue maior.
+    *   **Sub-tarefas / Próximos Passos:**
+        *   Adicionar mais conteúdo ao diálogo (Issue #4)
+        *   Implementar novas animações ou interações (Issue #5)
+        *   Refinar a responsividade para diferentes tamanhos de tela (Issue #6)
+        *   Integrar com API ou funcionalidade de backend (Issue #7)
 
-2.  **Melhorar esquema de cores e adicionar tema escuro (Issue #2)**
-    *   **Justificativa:** Uma vez que as sessões da página estejam organizadas, faz sentido focar na melhoria do esquema de cores e na implementação do tema escuro. Essas são melhorias visuais que se beneficiam de uma estrutura de página já estabelecida, permitindo uma aplicação mais coesa e eficaz do design.
+2.  **Organizar sessões da página (Issue #3) - Concluída**
+    *   **Justificativa:** As sessões da página foram organizadas em componentes modulares (`Header`, `ResourcesSection`, `ChatSection`), tornando o código mais modular e fácil de manter.
 
-3.  **Implementa Página Interativa 'O Legado de Potemkin' com React, Tailwind e Animações (Issue #1)**
-    *   **Justificativa:** Esta issue é o objetivo principal do projeto e é bastante abrangente. As issues #2 e #3 são, na verdade, sub-tarefas que contribuem para a conclusão desta issue maior. Ela deve permanecer aberta como o rastreador principal do progresso geral do projeto, mas o trabalho direto deve se concentrar nas tarefas mais granulares (como as issues #2 e #3) que a compõem.
+3.  **Melhorar esquema de cores e adicionar tema escuro (Issue #2) - Concluída**
+    *   **Justificativa:** O esquema de cores foi melhorado com uma paleta semântica e o tema escuro foi implementado com um toggle no frontend, melhorando a experiência do usuário.
