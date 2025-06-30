@@ -12,9 +12,9 @@ body {
 }
 
 #root {
-  max-width: 768px; /* Equivalente a max-w-3xl */
-  margin: 0 auto; /* Centraliza o conteúdo */
-  padding: 2rem; /* Mantém o padding original */
+  /* max-width: 768px; */ /* Equivalente a max-w-3xl */
+  /* margin: 0 auto; */ /* Centraliza o conteúdo */
+  /* padding: 2rem; */ /* Mantém o padding original */
 }
 
 .prose pre,

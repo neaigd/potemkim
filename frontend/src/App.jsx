@@ -76,7 +76,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-light-background flex flex-col items-center py-10 px-8">
+    <div className="min-h-screen bg-light-background flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
       <button
         onClick={toggleDarkMode}
         className="fixed top-4 right-4 p-2 rounded-full bg-light-accent-blue text-white dark:bg-dark-accent-blue shadow-lg z-50"
