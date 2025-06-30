@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import markdownit from 'markdown-it';
 import chatMarkdown from './chat.md?raw'; // Importa o conteúdo do chat.md como string
+import DialogueTurn from './DialogueTurn';
 
 
 const md = markdownit();
