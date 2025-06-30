@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import markdownit from 'markdown-it';
 import chatMarkdown from './chat.md?raw'; // Importa o conteúdo do chat.md como string
-import './index.css'; // Importe o CSS do Tailwind
+
 
 const md = markdownit();
 
@@ -115,9 +115,8 @@ function App() {
         {displayedTurns.map((turn, index) => (
           <div
             key={index}
-            className={`mb-6 p-4 rounded-xl shadow-md transition-all duration-500 ease-in-out transform
+            className={`mb-6 p-4 rounded-xl shadow-md
               ${turn.speaker === 'Eu' ? 'bg-blue-100 text-blue-900 ml-auto mr-0 text-right' : 'bg-purple-100 text-purple-900 mr-auto ml-0 text-left'}
-              ${index === displayedTurns.length - 1 ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}
             `}
           >
             <p className="font-bold text-lg mb-1">{turn.speaker}:</p>
