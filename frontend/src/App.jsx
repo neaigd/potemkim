@@ -61,19 +61,6 @@ function parseChatMarkdown(markdownText) {
 const chatTurns = parseChatMarkdown(chatMarkdown);
 
 function App() {
-  const [displayedTurns, setDisplayedTurns] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    if (currentIndex < chatTurns.length) {
-      const timer = setTimeout(() => {
-        setDisplayedTurns((prev) => [...prev, chatTurns[currentIndex]]);
-        setCurrentIndex((prev) => prev + 1);
-      }, 1000); // Delay de 1 segundo entre as falas
-      return () => clearTimeout(timer);
-    }
-  }, [currentIndex, chatTurns]);
-
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10 px-4">
       <h1 className="text-5xl font-extrabold text-gray-900 mb-8 text-center leading-tight">O Legado de Potemkin: Uma Análise sobre Coerência</h1>
@@ -112,7 +99,7 @@ function App() {
       <h2 className="text-4xl font-bold text-gray-800 mb-8">Diálogo Completo</h2>
 
       <div className="w-full max-w-3xl">
-        {displayedTurns.map((turn, index) => (
+        {chatTurns.map((turn, index) => (
           <DialogueTurn key={index} turn={{...turn, text: md.render(turn.text)}} />
         ))}
       </div>
