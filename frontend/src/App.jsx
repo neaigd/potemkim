@@ -70,7 +70,7 @@ function App() {
         <h2 className="text-3xl font-bold mb-4 border-b-2 border-blue-400 pb-2">Recursos Principais</h2>
         
         <h3 className="text-2xl font-semibold mb-3">Vídeo: A Incoerência das IAs</h3>
-        <div className="relative w-full h-96">
+        <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
           <iframe
             className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
             src={videoInfo.url}
@@ -100,7 +100,9 @@ function App() {
       <h2 className="text-4xl font-bold text-gray-800 mb-8">Diálogo Completo</h2>
 
       <div className="w-full max-w-3xl">
-        <pre>{JSON.stringify(chatTurns, null, 2)}</pre>
+        {chatTurns.map((turn, index) => (
+          <DialogueTurn key={index} turn={{...turn, text: md.render(turn.text)}} />
+        ))}
       </div>
     </div>
   );
