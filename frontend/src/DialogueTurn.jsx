@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const DialogueTurn = ({ turn }) => {
+const DialogueTurn = ({ turn, md }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const isLongText = turn.text.length > 280;
 
@@ -8,16 +8,17 @@ const DialogueTurn = ({ turn }) => {
     setIsExpanded(!isExpanded);
   };
 
+  const displayedText = isLongText && !isExpanded ? `${turn.text.substring(0, 280)}...` : turn.text;
+
   return (
     <div
       className={`mb-6 p-4 rounded-xl shadow-md ${turn.speaker === 'Eu' ? 'bg-blue-100 text-blue-900 ml-auto mr-0 text-right' : 'bg-purple-100 text-purple-900 mr-auto ml-0 text-left'}`}>
       <p className="font-bold text-lg mb-1">{turn.speaker}:</p>
-      <div
-        className="prose max-w-none"
-        dangerouslySetInnerHTML={{
-          __html: isLongText && !isExpanded ? `${turn.text.substring(0, 280)}...` : turn.text,
-        }}
-      />
+      <div className="prose prose-base max-w-none overflow-wrap-break-word word-break-break-word">
+        <div
+          dangerouslySetInnerHTML={{ __html: md.render(displayedText) }}
+        />
+      </div>
       {isLongText && (
         <button onClick={toggleExpansion} className="text-blue-500 hover:underline mt-2">
           {isExpanded ? 'Mostrar menos' : 'Leia mais...'}

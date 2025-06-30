@@ -63,10 +63,10 @@ const chatTurns = parseChatMarkdown(chatMarkdown);
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10 px-4">
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10 px-8">
       <h1 className="text-5xl font-extrabold text-gray-900 mb-8 text-center leading-tight">O Legado de Potemkin: Uma Análise sobre Coerência</h1>
 
-      <div className="bg-blue-50 border-l-4 border-blue-500 text-blue-800 p-6 rounded-lg shadow-md mb-10 max-w-3xl w-full">
+      <div className="bg-blue-50 border-l-4 border-blue-500 text-blue-800 p-6 rounded-lg shadow-md mb-10">
         <h2 className="text-3xl font-bold mb-4 border-b-2 border-blue-400 pb-2">Recursos Principais</h2>
         
         <h3 className="text-2xl font-semibold mb-3">Vídeo: A Incoerência das IAs</h3>
@@ -99,9 +99,9 @@ function App() {
 
       <h2 className="text-4xl font-bold text-gray-800 mb-8">Diálogo Completo</h2>
 
-      <div className="w-full max-w-3xl">
+      <div className="flex flex-col">
         {chatTurns.map((turn, index) => (
-          <DialogueTurn key={index} turn={{...turn, text: md.render(turn.text)}} />
+          <DialogueTurn key={index} turn={turn} md={md} />
         ))}
       </div>
     </div>
