@@ -50,13 +50,14 @@ Para garantir um desenvolvimento eficiente e organizado, as issues abertas no re
 1.  **Implementa Página Interativa 'O Legado de Potemkin' com React, Tailwind e Animações (Issue #1)**
     *   **Justificativa:** Esta issue é o objetivo principal do projeto e é bastante abrangente. As tarefas abaixo são desdobramentos que contribuem para a conclusão desta issue maior.
     *   **Sub-tarefas / Próximos Passos:**
-        *   Adicionar mais conteúdo ao diálogo (Issue #4)
         *   Implementar novas animações ou interações (Issue #5)
-        *   Refinar a responsividade para diferentes tamanhos de tela (Issue #6)
         *   Integrar com API ou funcionalidade de backend (Issue #7)
 
-2.  **Organizar sessões da página (Issue #3) - Concluída**
-    *   **Justificativa:** As sessões da página foram organizadas em componentes modulares (`Header`, `ResourcesSection`, `ChatSection`), tornando o código mais modular e fácil de manter.
+2.  **Refinar a responsividade para diferentes tamanhos de tela (Issue #6) - Concluída**
+    *   **Justificativa:** A responsividade da página foi aprimorada, removendo larguras fixas e aplicando classes responsivas do Tailwind CSS para garantir uma melhor experiência em diferentes tamanhos de tela.
 
-3.  **Melhorar esquema de cores e adicionar tema escuro (Issue #2) - Concluída**
+3.  **Adicionar mais conteúdo ao diálogo (Issue #4) - Concluída**
+    *   **Justificativa:** O conteúdo do diálogo foi expandido com novos turnos e a introdução de desafios práticos, enriquecendo a discussão e o engajamento do usuário.
+
+4.  **Melhorar esquema de cores e adicionar tema escuro (Issue #2) - Concluída**
     *   **Justificativa:** O esquema de cores foi melhorado com uma paleta semântica e o tema escuro foi implementado com um toggle no frontend, melhorando a experiência do usuário.
