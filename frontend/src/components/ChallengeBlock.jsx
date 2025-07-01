@@ -12,7 +12,7 @@ const ChallengeBlock = ({ children }) => {
           observer.unobserve(challengeRef.current);
         }
       },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
+      { threshold: 0.1 }
     );
 
     if (challengeRef.current) {
@@ -31,8 +31,8 @@ const ChallengeBlock = ({ children }) => {
       ref={challengeRef}
       className={`transition-all duration-700 ease-out transform
         ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-        mt-6 p-6 rounded-lg shadow-lg border border-light-border bg-light-card-background
-        dark:border-dark-border dark:bg-dark-card-background
+        mt-6 p-6 rounded-lg shadow-lg border border-border bg-card-background
+        dark:border-border dark:bg-card-background
       `}
     >
       {children}

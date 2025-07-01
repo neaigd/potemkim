@@ -6,7 +6,7 @@ function ResourcesSection({ videoInfo, articleInfo }) {
       <h2 className="text-3xl font-bold mb-4 border-b-2 border-light-accent-blue pb-2">Recursos Principais</h2>
       
       <h3 className="text-2xl font-semibold mb-3">Vídeo: A Incoerência das IAs</h3>
-      <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+      <div className="relative w-full max-w-full" style={{ paddingBottom: '56.25%' }}>
         <iframe
           className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
           src={videoInfo.url}
@@ -26,7 +26,7 @@ function ResourcesSection({ videoInfo, articleInfo }) {
           href={articleInfo.link} 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-light-accent-blue hover:text-dark-accent-blue font-medium transition duration-300 ease-in-out"
+          className="text-accent-blue hover:text-accent-blue dark:text-dark-accent-blue dark:hover:text-dark-accent-blue font-medium transition duration-300 ease-in-out"
         >
           Acessar Artigo (se disponível)
         </a>

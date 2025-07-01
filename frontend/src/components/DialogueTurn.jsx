@@ -7,7 +7,7 @@ const DialogueTurn = ({ turn, md }) => {
   if (turn.type === 'challenge') {
     return (
       <ChallengeBlock>
-        <div dangerouslySetInnerHTML={{ __html: md.render(turn.content) }} />
+        <div className="prose prose-base max-w-none overflow-wrap-break-word word-break-break-word" dangerouslySetInnerHTML={{ __html: turn.content }} />
       </ChallengeBlock>
     );
   }
@@ -22,7 +22,7 @@ const DialogueTurn = ({ turn, md }) => {
 
   return (
     <div
-      className={`mb-6 p-4 rounded-xl shadow-md ${turn.speaker === 'Eu' ? 'bg-light-accent-blue/10 text-light-text-primary dark:bg-dark-accent-blue/20 dark:text-dark-text-primary ml-auto mr-0 text-right' : 'bg-light-accent-purple/10 text-light-text-primary dark:bg-dark-accent-purple/20 dark:text-dark-text-primary mr-auto ml-0 text-left'}`} >
+      className={`mb-6 p-4 rounded-xl shadow-md ${turn.speaker === 'Eu' ? 'bg-accent-blue/10 text-primary dark:bg-accent-blue/20 dark:text-primary ml-auto mr-0 text-right' : 'bg-accent-purple/10 text-primary dark:bg-accent-purple/20 dark:text-primary mr-auto ml-0 text-left'}`} >
       <p className="font-bold text-lg mb-1">{turn.speaker}:</p>
       <div className="prose prose-base max-w-none overflow-wrap-break-word word-break-break-word">
         <div
@@ -30,7 +30,7 @@ const DialogueTurn = ({ turn, md }) => {
         />
       </div>
       {isLongText && (
-        <button onClick={toggleExpansion} className="text-blue-500 hover:underline mt-2">
+        <button onClick={toggleExpansion} className="text-accent-blue hover:underline mt-2">
           {isExpanded ? 'Mostrar menos' : 'Leia mais...'}
         </button>
       )}
