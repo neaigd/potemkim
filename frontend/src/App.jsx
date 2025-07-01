@@ -3,7 +3,8 @@ import markdownit from 'markdown-it';
 import Header from './components/Header';
 import ResourcesSection from './components/ResourcesSection';
 import ChatSection from './components/ChatSection';
-import { videoInfo, articleInfo, chatTurns } from './data/chatContent.js';
+import ChallengeSection from './components/ChallengeSection';
+import { videoInfo, articleInfo, chatTurns, challengeBlocks } from './data/chatContent.js';
 
 const md = markdownit();
 
@@ -23,7 +24,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-primary dark:bg-background dark:text-primary flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
+    <div className="min-h-screen bg-background text-primary flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
       <button
         onClick={toggleDarkMode}
         className="fixed top-4 right-4 p-2 rounded-full bg-accent-blue text-white dark:bg-accent-blue shadow-lg z-50"
@@ -33,6 +34,7 @@ function App() {
       <Header />
       <ResourcesSection videoInfo={videoInfo} articleInfo={articleInfo} />
       <ChatSection chatTurns={chatTurns} md={md} />
+      <ChallengeSection challengeBlocks={challengeBlocks} />
     </div>
   );
 }

@@ -1,16 +1,7 @@
 import React, { useState } from 'react';
-import ChallengeBlock from './ChallengeBlock';
 
 const DialogueTurn = ({ turn, md }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-
-  if (turn.type === 'challenge') {
-    return (
-      <ChallengeBlock>
-        <div className="prose prose-base max-w-none overflow-wrap-break-word word-break-break-word" dangerouslySetInnerHTML={{ __html: turn.content }} />
-      </ChallengeBlock>
-    );
-  }
 
   const isLongText = turn.text.length > 280;
 

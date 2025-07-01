@@ -38,7 +38,7 @@ export default {
     'bg-accent-purple',
     'text-accent-purple',
     'bg-dark-background',
-    'text-dark-primary',
+    'dark-text-primary',
     'text-dark-secondary',
     'bg-dark-card-background',
     'border-dark-border',
