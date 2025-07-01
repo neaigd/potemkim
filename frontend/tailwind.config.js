@@ -3,6 +3,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.md", // Adiciona arquivos Markdown para escaneamento do Tailwind
   ],
   darkMode: 'class', // Enable dark mode based on class
   theme: {

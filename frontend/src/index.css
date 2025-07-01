@@ -4,11 +4,9 @@
 
 body {
   overflow-x: hidden;
-  @apply bg-light-background text-light-text-primary;
 }
 
 .dark body {
-  @apply bg-dark-background text-dark-text-primary;
 }
 
 #root {

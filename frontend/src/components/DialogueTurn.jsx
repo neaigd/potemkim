@@ -1,7 +1,17 @@
 import React, { useState } from 'react';
+import ChallengeBlock from './ChallengeBlock';
 
 const DialogueTurn = ({ turn, md }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+
+  if (turn.type === 'challenge') {
+    return (
+      <ChallengeBlock>
+        <div dangerouslySetInnerHTML={{ __html: md.render(turn.content) }} />
+      </ChallengeBlock>
+    );
+  }
+
   const isLongText = turn.text.length > 280;
 
   const toggleExpansion = () => {

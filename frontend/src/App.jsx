@@ -21,40 +21,99 @@ const articleInfo = {
 
 function parseChatMarkdown(markdownText) {
   const turns = [];
-  const lines = markdownText.split('\n');
-  let currentSpeaker = null;
-  let currentTextLines = [];
+  const challengeBlockRegex = /<div class="challenge-block">([\s\S]*?)<\/div>/g;
+  let lastIndex = 0;
+  let match;
 
-  for (const line of lines) {
-    if (line.startsWith('**Eu:**')) {
+  while ((match = challengeBlockRegex.exec(markdownText)) !== null) {
+    const textBefore = markdownText.substring(lastIndex, match.index).trim();
+    if (textBefore) {
+      const dialogueParts = textBefore.split('\n');
+      let currentSpeaker = null;
+      let currentTextLines = [];
+
+      for (const line of dialogueParts) {
+        if (line.startsWith('**Eu:**')) {
+          if (currentSpeaker && currentTextLines.length > 0) {
+            turns.push({
+              type: 'dialogue',
+              speaker: currentSpeaker,
+              text: currentTextLines.join('\n').trim()
+            });
+          }
+          currentSpeaker = 'Eu';
+          currentTextLines = [line.substring('**Eu:**'.length).trim()];
+        } else if (line.startsWith('**Gemini:**')) {
+          if (currentSpeaker && currentTextLines.length > 0) {
+            turns.push({
+              type: 'dialogue',
+              speaker: currentSpeaker,
+              text: currentTextLines.join('\n').trim()
+            });
+          }
+          currentSpeaker = 'Gemini';
+          currentTextLines = [line.substring('**Gemini:**'.length).trim()];
+        } else {
+          currentTextLines.push(line);
+        }
+      }
       if (currentSpeaker && currentTextLines.length > 0) {
         turns.push({
+          type: 'dialogue',
           speaker: currentSpeaker,
           text: currentTextLines.join('\n').trim()
         });
       }
-      currentSpeaker = 'Eu';
-      currentTextLines = [line.substring('**Eu:**'.length).trim()];
-    } else if (line.startsWith('**Gemini:**')) {
-      if (currentSpeaker && currentTextLines.length > 0) {
-        turns.push({
-          speaker: currentSpeaker,
-          text: currentTextLines.join('\n').trim()
-        });
+    }
+
+    turns.push({
+      type: 'challenge',
+      content: match[1].trim()
+    });
+
+    lastIndex = challengeBlockRegex.lastIndex;
+  }
+
+  const textAfter = markdownText.substring(lastIndex).trim();
+  if (textAfter) {
+    const dialogueParts = textAfter.split('\n');
+    let currentSpeaker = null;
+    let currentTextLines = [];
+
+    for (const line of dialogueParts) {
+      if (line.startsWith('**Eu:**')) {
+        if (currentSpeaker && currentTextLines.length > 0) {
+          turns.push({
+            type: 'dialogue',
+            speaker: currentSpeaker,
+            text: currentTextLines.join('\n').trim()
+          });
+        }
+        currentSpeaker = 'Eu';
+        currentTextLines = [line.substring('**Eu:**'.length).trim()];
+      } else if (line.startsWith('**Gemini:**')) {
+        if (currentSpeaker && currentTextLines.length > 0) {
+          turns.push({
+            type: 'dialogue',
+            speaker: currentSpeaker,
+            text: currentTextLines.join('\n').trim()
+          });
+        }
+        currentSpeaker = 'Gemini';
+        currentTextLines = [line.substring('**Gemini:**'.length).trim()];
+      } else {
+        currentTextLines.push(line);
       }
-      currentSpeaker = 'Gemini';
-      currentTextLines = [line.substring('**Gemini:**'.length).trim()];
-    } else {
-      currentTextLines.push(line);
+    }
+    if (currentSpeaker && currentTextLines.length > 0) {
+      turns.push({
+        type: 'dialogue',
+        speaker: currentSpeaker,
+        text: currentTextLines.join('\n').trim()
+      });
     }
   }
 
-  if (currentSpeaker && currentTextLines.length > 0) {
-    turns.push({
-      speaker: currentSpeaker,
-      text: currentTextLines.join('\n').trim()
-    });
-  }
   return turns;
 }
 
@@ -76,7 +135,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-light-background flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
+    <div className="min-h-screen bg-light-background text-light-text-primary dark:bg-dark-background dark:text-dark-text-primary flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
       <button
         onClick={toggleDarkMode}
         className="fixed top-4 right-4 p-2 rounded-full bg-light-accent-blue text-white dark:bg-dark-accent-blue shadow-lg z-50"
